@@ -12,8 +12,9 @@ st.write(
 # session = get_active_session() #used in snowflake
 cnx = st.connection("snowflake") #used out of snowflake
 session = cnx.session()
-my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
-#st.dataframe(data=my_dataframe, use_container_width=True)
+my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'),col('SEARCH_ON')
+st.dataframe(data=my_dataframe, use_container_width=True)
+st.stop()                                                                      
 #st.write("You selected:", options)
 
 name_on_order = st.text_input("Name on Smoothie", "")
